@@ -86,47 +86,5 @@ namespace DotNetCoreCSharpMsSqlDbApi.Controllers
 
 
 
-
-	
-
-		//// PUT: api/Products/5
-		//[HttpPut("{id}")]
-		//public async Task<IActionResult> PutProduct([FromRoute] int id, [FromBody] Product product)
-		//{
-		//	if (!ModelState.IsValid)
-		//	{
-		//		return BadRequest(ModelState);
-		//	}
-
-		//	if (id != product.Id)
-		//	{
-		//		return BadRequest();
-		//	}
-
-		//	_context.Entry(product).State = EntityState.Modified;
-
-		//	try
-		//	{
-		//		await _context.SaveChangesAsync();
-		//	}
-		//	catch (DbUpdateConcurrencyException)
-		//	{
-		//		if (!ProductExists(id))
-		//		{
-		//			return NotFound();
-		//		}
-		//		else
-		//		{
-		//			throw;
-		//		}
-		//	}
-
-		//	return NoContent();
-		//}
-
-		
-
-		
-
 	}
 }
