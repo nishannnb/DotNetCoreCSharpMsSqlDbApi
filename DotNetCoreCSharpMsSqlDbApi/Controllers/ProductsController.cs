@@ -42,39 +42,52 @@ namespace DotNetCoreCSharpMsSqlDbApi.Controllers
 			return await _productService.GetProductById(id);
 		}
 
+		[Route("api/Products/InsertOneProduct")]
+		[HttpPost]
+		public async Task<bool> InsertOneProduct([FromBody] Product product)
+		{
+			return await _productService.InsertOneProduct(product);
+		}
+
+		[Route("api/Products/InsertManyProduct")]
+		[HttpPost]
+		public async Task<bool> InsertManyProduct([FromBody] List<Product> products)
+		{
+			return await _productService.InsertManyProduct(products);
+		}
+
+		[Route("api/Products/UpdateOneProduct")]
+		[HttpPut]
+		public async Task<bool> UpdateOneProduct([FromBody] Product product)
+		{
+			return await _productService.UpdateOneProduct(product);
+		}
+
+		[Route("api/Products/InsertManyProduct")]
+		[HttpPut]
+		public async Task<bool> UpdateManyProduct([FromBody] List<Product> products)
+		{
+			return await _productService.UpdateManyProduct(products);
+		}
+
+		[Route("api/Products/DeleteOneProduct/{id}")]
+		[HttpDelete]
+		public async Task<bool> DeleteOneProduct(int id)
+		{
+			return await _productService.DeleteOneProduct(id);
+		}
+
+		[Route("api/Products/DeleteManyProduct")]
+		[HttpPost]
+		public async Task<bool> DeleteManyProduct()
+		{
+			return await _productService.DeleteManyProduct();
+		}
 
 
 
 
-
-
-
-
-		//// GET: api/Products
-		//[HttpGet]
-		//public IEnumerable<Product> GetProduct()
-		//{
-		//	return _context.Product;
-		//}
-
-		//// GET: api/Products/5
-		//[HttpGet("{id}")]
-		//public async Task<IActionResult> GetProduct([FromRoute] int id)
-		//{
-		//	if (!ModelState.IsValid)
-		//	{
-		//		return BadRequest(ModelState);
-		//	}
-
-		//	var product = await _context.Product.SingleOrDefaultAsync(m => m.Id == id);
-
-		//	if (product == null)
-		//	{
-		//		return NotFound();
-		//	}
-
-		//	return Ok(product);
-		//}
+	
 
 		//// PUT: api/Products/5
 		//[HttpPut("{id}")]
@@ -111,45 +124,9 @@ namespace DotNetCoreCSharpMsSqlDbApi.Controllers
 		//	return NoContent();
 		//}
 
-		//// POST: api/Products
-		//[HttpPost]
-		//public async Task<IActionResult> PostProduct([FromBody] Product product)
-		//{
-		//	if (!ModelState.IsValid)
-		//	{
-		//		return BadRequest(ModelState);
-		//	}
+		
 
-		//	_context.Product.Add(product);
-		//	await _context.SaveChangesAsync();
+		
 
-		//	return CreatedAtAction("GetProduct", new { id = product.Id }, product);
-		//}
-
-		//// DELETE: api/Products/5
-		//[HttpDelete("{id}")]
-		//public async Task<IActionResult> DeleteProduct([FromRoute] int id)
-		//{
-		//	if (!ModelState.IsValid)
-		//	{
-		//		return BadRequest(ModelState);
-		//	}
-
-		//	var product = await _context.Product.SingleOrDefaultAsync(m => m.Id == id);
-		//	if (product == null)
-		//	{
-		//		return NotFound();
-		//	}
-
-		//	_context.Product.Remove(product);
-		//	await _context.SaveChangesAsync();
-
-		//	return Ok(product);
-		//}
-
-		//private bool ProductExists(int id)
-		//{
-		//	return _context.Product.Any(e => e.Id == id);
-		//}
 	}
 }

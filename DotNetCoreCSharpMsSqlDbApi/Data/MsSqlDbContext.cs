@@ -15,4 +15,5 @@ public class MsSqlDbContext : DbContext
 	}
 
 	public DbSet<Product> Products { get; set; }
+
 }

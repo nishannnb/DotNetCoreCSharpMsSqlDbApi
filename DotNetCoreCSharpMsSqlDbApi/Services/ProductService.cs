@@ -27,5 +27,36 @@ namespace DotNetCoreCSharpMsSqlDbApi.Services
 		{
 			return await _productRepo.GetProductById(id);
 		}
+
+		public async Task<bool> InsertOneProduct(Product product)
+		{
+			return await _productRepo.InsertOneProduct(product);
+		}
+
+		public async Task<bool> InsertManyProduct(List<Product> products)
+		{
+			return await _productRepo.InsertManyProduct(products);
+		}
+
+		public async Task<bool> UpdateOneProduct(Product product)
+		{
+			return await _productRepo.UpdateOneProduct(product);
+		}
+
+		public async Task<bool> UpdateManyProduct(List<Product> products)
+		{
+			return await _productRepo.UpdateManyProduct(products);
+		}
+
+		public async Task<bool> DeleteOneProduct(int id)
+		{
+			return await _productRepo.DeleteOneProduct(id);
+		}
+
+		public async Task<bool> DeleteManyProduct()
+		{
+			return await _productRepo.DeleteManyProduct();
+		}
+
 	}
 }
