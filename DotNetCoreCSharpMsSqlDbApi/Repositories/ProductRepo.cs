@@ -1,4 +1,5 @@
 ﻿using DotNetCoreCSharpMsSqlDbApi.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,12 @@ namespace DotNetCoreCSharpMsSqlDbApi.Repositories
 		}
 
 
-		public IEnumerable<Product> GetAllProductsEnu()
+		public async Task<List<Product>> GetAllProducts()
 		{
 			try
 			{
-				return _msSqlDbContext.Products.AsEnumerable();
+				var result = await _msSqlDbContext.Products.ToListAsync();
+				return result;
 			}
 			catch (Exception ex)
 			{
@@ -29,11 +31,11 @@ namespace DotNetCoreCSharpMsSqlDbApi.Repositories
 			}
 		}
 
-		public List<Product> GetAllProductsList()
+		public async Task<Product> GetProductById(int id)
 		{
 			try
 			{
-				return _msSqlDbContext.Products.ToList();
+				return await _msSqlDbContext.Products.FindAsync(id);
 			}
 			catch (Exception ex)
 			{

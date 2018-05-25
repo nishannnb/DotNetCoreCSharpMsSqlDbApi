@@ -18,14 +18,14 @@ namespace DotNetCoreCSharpMsSqlDbApi.Services
 			_productRepo = new ProductRepo(msSqlDbContext);
 		}
 
-		public IEnumerable<Product> GetAllProductsEnu()
+		public async Task<List<Product>> GetAllProducts()
 		{
-			return _productRepo.GetAllProductsEnu();
+			return await _productRepo.GetAllProducts();
 		}
 
-		public List<Product> GetAllProductsList()
+		public async Task<Product> GetProductById(int id)
 		{
-			return _productRepo.GetAllProductsList();
+			return await _productRepo.GetProductById(id);
 		}
 	}
 }

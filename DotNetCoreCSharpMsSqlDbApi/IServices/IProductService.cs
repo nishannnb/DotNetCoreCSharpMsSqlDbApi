@@ -8,8 +8,8 @@ namespace DotNetCoreCSharpMsSqlDbApi.IServices
 {
 	public interface IProductService
 	{
-		IEnumerable<Product> GetAllProductsEnu();
-		List<Product> GetAllProductsList();
+		Task<List<Product>> GetAllProducts();
+		Task<Product> GetProductById(int id);
 		//Task<Product> GetProductById(int id);
 		//Task<bool> InsertOneProduct(Product product);
 		//Task<bool> InsertManyProduct(List<Product> products);

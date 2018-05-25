@@ -28,18 +28,18 @@ namespace DotNetCoreCSharpMsSqlDbApi.Controllers
 			return "Product Api is working";
 		}
 
-		[Route("api/Products/GetAllProductsEnu")]
+		[Route("api/Products/GetAllProducts")]
 		[HttpGet]
-		public IEnumerable<Product> GetAllProductsEnu()
+		public async Task<List<Product>> GetAllProducts()
 		{
-			return _productService.GetAllProductsEnu();
+			return await _productService.GetAllProducts();
 		}
 
-		[Route("api/Products/GetAllProductsList")]
+		[Route("api/Products/GetProductById/{id}")]
 		[HttpGet]
-		public List<Product> GetAllProductsList()
+		public async Task<Product> GetProductById(int id)
 		{
-			return _productService.GetAllProductsList();
+			return await _productService.GetProductById(id);
 		}
 
 
